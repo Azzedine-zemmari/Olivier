@@ -1,30 +1,36 @@
 const router = require("express").Router();
 const db = require("../config/db")
-
+const Event = require("../Controllers/EventsController")
 //open page register
 router.get("/SignUp",(req,res)=>{
-    res.sendFile(__dirname + "/register.html");
+    res.redirect("/public/register.html");
 });
 //open page login
 router.get("/",(req,res)=>{
-    res.sendFile(__dirname + "/login.html");
+    res.redirect("/public/login.html");
 });
-router.get("/Dashboard",(req,res)=>{
-    res.sendFile(__dirname + "/Dashborad.html")
-})
+// router.get("/Dashboard",(req,res)=>{
+//     // const sql = "SELECT * FROM phenological_stages"
+//     // db.query(sql,(err,result)=>{
+//     //     res.render("Dashboard",{data:result});
+//         // res.redirect("/public/Dashboard.ejs");
+//     // })
+// });
+// 
+router.get("/Dashboard",Event.getAllEvents)
 //do the login 
 router.post("/login",(req,res)=>{
     const {email,password} = req.body
-    const sql = `SELECT * FROM persons WHERE email ='${email}' and password ='${password}'`;
+    const sql = `SELECT * FROM persons WHERE email ='${email}' and password ='${password}';`
     db.query(sql,(err,result)=>{
+        console.log(result)
         if(err){
             throw err;
         }
-        const user = result[0];
-        if(user.admin === 1){
-            res.redirect("./Dashboard.html");
+        if(result[0].admin == 1){
+            res.redirect("/public/Dashboard.html");
         }
-        res.send(`Welcome ${user.nom}`)
+        res.send(`Welcome ${result[0].nom}`)
     })
 })
 //do the register
