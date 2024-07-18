@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const db = require("../config/db")
 const Event = require("../Controllers/EventsController")
+
+//upload the file
+router.post("/file-upload",Event.InsertStade);
+
 //open page register
 router.get("/SignUp",(req,res)=>{
     res.redirect("/public/register.html");
@@ -9,14 +13,9 @@ router.get("/SignUp",(req,res)=>{
 router.get("/",(req,res)=>{
     res.redirect("/public/login.html");
 });
-// router.get("/Dashboard",(req,res)=>{
-//     // const sql = "SELECT * FROM phenological_stages"
-//     // db.query(sql,(err,result)=>{
-//     //     res.render("Dashboard",{data:result});
-//         // res.redirect("/public/Dashboard.ejs");
-//     // })
-// });
-// 
+router.get("/AddForm",(req,res)=>{
+    res.redirect("/public/AddForm.html");
+})
 router.get("/Dashboard",Event.getAllEvents)
 //do the login 
 router.post("/login",(req,res)=>{

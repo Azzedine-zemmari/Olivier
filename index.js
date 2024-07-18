@@ -3,6 +3,7 @@ const bodyParser =require("body-parser")
 const mydb = require("./config/db")
 const rout = require("./routers/router")
 const path = require("path")
+
 const app = express()
 app.use(express.static(path.join(__dirname, '')));
 app.set('view engine', 'ejs');
