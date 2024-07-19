@@ -18,20 +18,25 @@ router.get("/AddForm",(req,res)=>{
 })
 router.get("/Dashboard",Event.getAllEvents)
 //do the login 
-router.post("/login",(req,res)=>{
-    const {email,password} = req.body
-    const sql = `SELECT * FROM persons WHERE email ='${email}' and password ='${password}';`
-    db.query(sql,(err,result)=>{
-        console.log(result)
-        if(err){
-            throw err;
+router.post("/login", (req, res) => {
+    const { email, password } = req.body;
+    const sql = `SELECT * FROM persons WHERE email = '${email}' AND password = '${password}';`;
+    db.query(sql, (err, result) => {
+        // if (err) {
+        //     res.status(500).send('Database error');
+        //     return;
+        // }
+        if (result.length === 0) {
+            res.status(404).send('Invalid email or password');
+            return;
         }
-        if(result[0].admin == 1){
-            res.redirect("/public/Dashboard.html");
+        if (result[0].admin == 1) {
+            res.redirect("Dashboard");
+        } else {
+            res.send(`Welcome ${result[0].nom}`);
         }
-        res.send(`Welcome ${result[0].nom}`)
-    })
-})
+    });
+});
 //do the register
 router.post("/register",(req,res)=>{
     const {nom,prenom,email,tel,password} = req.body;
