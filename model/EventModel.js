@@ -11,8 +11,8 @@ class EventModel{
             })
         })
     }
-    static async AddEvents(name,img,description,time){
-        const sql = `INSERT INTO phenological_stages(name,description,image_url,ceated_at) VALUES ('${name}','${img}','${description}','${time}')`;
+    static async AddEvents(name,description,img,time){
+        const sql = `INSERT INTO phenological_stages(name,description,image_url,ceated_at) VALUES ('${name}','${description}','${img}','${time}')`;
         return new Promise((resolve)=>{
             db.query(sql,(err,result)=>{
                 if(!err){

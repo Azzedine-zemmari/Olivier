@@ -1,10 +1,13 @@
 const router = require("express").Router();
 const db = require("../config/db")
 const Event = require("../Controllers/EventsController")
+const Agenda = require("../Controllers/AgendaController")
 
 //upload the file
-router.post("/file-upload",Event.InsertStade);
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
+router.post("/file-upload", upload.single('file'), Event.InsertStade);
 //open page register
 router.get("/SignUp",(req,res)=>{
     res.redirect("/public/register.html");
@@ -17,6 +20,8 @@ router.get("/AddForm",(req,res)=>{
     res.redirect("/public/AddForm.html");
 })
 router.get("/Dashboard",Event.getAllEvents)
+
+router.get("/Agenda",Agenda.getAllAgenda)
 //do the login 
 router.post("/login", (req, res) => {
     const { email, password } = req.body;
@@ -31,9 +36,9 @@ router.post("/login", (req, res) => {
             return;
         }
         if (result[0].admin == 1) {
-            res.redirect("Dashboard");
+            res.redirect("/Dashboard");
         } else {
-            res.send(`Welcome ${result[0].nom}`);
+            res.render("Fertilisation");
         }
     });
 });

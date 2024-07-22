@@ -13,21 +13,21 @@
 </head>
 
 <body>
-    <form action="/file-upload" method="post">
+    <form action="/file-upload" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <label for="exampleInputEmail1" class="form-label">Stade</label>
             <input type="text" class="form-control" name="stade" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label">Description</label>
             <input type="text" class="form-control" name="description" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <label for="exampleInputEmail1" class="form-label">image</label>
             <input type="file" class="form-control" name="file" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
         
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label">time</label>
             <input type="date" class="form-control" name="created_At" id="exampleInputPassword1">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
