@@ -11,4 +11,4 @@ db.getConnection(()=>{
     console.log("database connected");
 })
 
-module.exports = db;
+module.exports = db;    

@@ -2,11 +2,12 @@ const router = require("express").Router();
 const db = require("../config/db")
 const Event = require("../Controllers/EventsController")
 const Agenda = require("../Controllers/AgendaController")
+const isAdmin = require("../middlewares/isAdmin")
+const isAuthenticated = require("../middlewares/isAuthenticated")
 
 //upload the file
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
-
 router.post("/file-upload", upload.single('file'), Event.InsertStade);
 //open page register
 router.get("/SignUp",(req,res)=>{
@@ -19,26 +20,33 @@ router.get("/",(req,res)=>{
 router.get("/AddForm",(req,res)=>{
     res.redirect("/public/AddForm.html");
 })
-router.get("/Dashboard",Event.getAllEvents)
+router.get("/Dashboard", isAuthenticated ,isAdmin,Event.getAllEvents)
 
-router.get("/Agenda",Agenda.getAllAgenda)
+router.get("/Agenda",isAuthenticated ,Agenda.getAllAgenda)
+
+router.get("/Fertilisation",isAuthenticated,(req,res)=>{
+    res.render("Fertilisation");
+})
 //do the login 
 router.post("/login", (req, res) => {
     const { email, password } = req.body;
     const sql = `SELECT * FROM persons WHERE email = '${email}' AND password = '${password}';`;
     db.query(sql, (err, result) => {
-        // if (err) {
-        //     res.status(500).send('Database error');
-        //     return;
-        // }
         if (result.length === 0) {
-            res.status(404).send('Invalid email or password');
+            req.flash('error', 'Invalid email or password');
+            res.redirect('/');
             return;
         }
+        // req.session.user = result[0];
+        req.session.user = {
+            id: result[0].id,
+            email: result[0].email,
+            admin: result[0].admin 
+        };
         if (result[0].admin == 1) {
             res.redirect("/Dashboard");
         } else {
-            res.render("Fertilisation");
+            res.render("Fertilisation");//change to acceuill
         }
     });
 });
@@ -53,6 +61,18 @@ router.post("/register",(req,res)=>{
         res.send('User register');
     })
 })
+
+
+// Logout route
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error :(');
+        }
+        res.redirect('/'); // Redirect to the login page or home page after logout
+    });
+});
+
 
 
 

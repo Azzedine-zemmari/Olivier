@@ -1,11 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 h1{
     color:rgb(172, 198, 111);
     font-family: "Lora",serif;
 }
+.section1{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
 .fer{
-    margin-left: 15px;
+    margin-top: 80px;
+    width: 50%;
+    margin-left: 160px;
 }
 .fer p{
-    
+    font-size: 22px;
+    font-weight: 500;
+    max-width: 900px;
+}
+.image{
+    width: 50%;
+    position: absolute;
+    top: 100px;
+    right: -220px;
+
+}
+.image img{
+    width:400px;
+    height:300px;
+    object-fit: contain;
+}
+li{
+    font-size: 20px;
+    color: gray;
+}
+.para{
+    font-size: 17px;
 }
