@@ -52,7 +52,7 @@ router.post("/login", (req, res) => {
 });
 //do the register
 router.post("/register",(req,res)=>{
-    const {nom,prenom,email,tel,password} = req.body;
+    const {nom,prenom,email,tel,password} = req.body; 
     const sql = `INSERT INTO persons (email, password, nom, prenom, number) VALUES (?,?,?,?,?)`;
     db.query(sql,[email,password,nom,prenom,tel],(err,result)=>{
         if(err){
