@@ -15,7 +15,7 @@ router.get("/SignUp",(req,res)=>{
 });
 //open page login
 router.get("/",(req,res)=>{
-    res.render("login");
+    res.render("Authentification");
 });
 router.get("/AddForm",(req,res)=>{
     res.redirect("/public/AddForm.html");
@@ -70,7 +70,7 @@ router.post("/register",(req,res)=>{
         if(err){
             res.status(500).send('Cet email est lie a un compte existant ! Veuillez saisir autre . <a href="/SignUp">go back</a>')
         }
-        res.send('User register');
+        res.render("zitoon");
     })
 })
 
