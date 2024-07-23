@@ -12,20 +12,32 @@
             <img class="logo" src="../public/images/lo.png" alt="">
             <nav class="menu">
                 <ul>
-                    <li><a href="culture.html">Culture</a></li>
-                    <li><a href="recolte.html">Récolte</a></li>
-                    <li><a href="#A">Calendrier</a></li>
-                    <li><a href="plantation.html">Plantation</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/Culture">Culture</a></li>
+                    <li><a href="/Rekolte">Récolte</a></li>
+                    <li><a href="/Agenda">Calendrier</a></li>
+                    <li class="plant"> Olives
+                        <ul class="dropdwn">
+                            <li><a href="/Plantation">Plantation</a></li>
+                            <li><a href="/Fertilisation">Fertilisation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/logout">Deconnection</a></li>
                 </ul>
             </nav>
+            
         </div>
         <nav class="phone">
             <ul class="phoneUl">
                 <li><a href="culture.html">Culture</a></li>
                     <li><a href="recolte.html">Récolte</a></li>
                     <li><a href="#A">Calendrier</a></li>
-                    <li><a href="plantation.html">Plantation</a></li>
+                    <li><a href="">Plantation</a>
+                        <ul>
+                            <li>+ Plantation</li>
+                            <li>+ Fertilisation</li>
+                            <li>+ Protection sanitaire</li>
+                        </ul>
+                    </li>
                     <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -36,7 +48,15 @@
     <script>
         const burger = document.querySelector(".burger");
         const phone = document.querySelector('.phone');
-    
+        const plant = document.querySelector(".plant")
+        const drop = document.querySelector(".dropdwn")
+        plant.addEventListener('click', ()=>{
+            if (drop.style.display === 'none' || drop.style.display === '') {
+                drop.style.display = 'block';
+            } else {
+                drop.style.display = 'none';
+            }
+        })
         burger.addEventListener('click', () => {
             if (phone.style.display === 'none' || phone.style.display === '') {
                 phone.style.display = 'block';

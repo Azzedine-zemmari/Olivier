@@ -15,7 +15,7 @@ router.get("/SignUp",(req,res)=>{
 });
 //open page login
 router.get("/",(req,res)=>{
-    res.redirect("/public/login.html");
+    res.render("login");
 });
 router.get("/AddForm",(req,res)=>{
     res.redirect("/public/AddForm.html");
@@ -24,6 +24,18 @@ router.get("/Dashboard", isAuthenticated ,isAdmin,Event.getAllEvents)
 
 router.get("/Agenda",isAuthenticated ,Agenda.getAllAgenda)
 
+router.get("/Home",isAuthenticated,(req,res)=>{
+    res.render("zitoon");
+})
+router.get("/Culture",isAuthenticated,(req,res)=>{
+    res.render("Culture");
+})
+router.get("/Rekolte",isAuthenticated,(req,res)=>{
+    res.render("Recolte");
+})
+router.get("/Plantation",isAuthenticated,(req,res)=>{
+    res.render("Plantation");
+})
 router.get("/Fertilisation",isAuthenticated,(req,res)=>{
     res.render("Fertilisation");
 })
@@ -33,7 +45,7 @@ router.post("/login", (req, res) => {
     const sql = `SELECT * FROM persons WHERE email = '${email}' AND password = '${password}';`;
     db.query(sql, (err, result) => {
         if (result.length === 0) {
-            req.flash('error', 'Invalid email or password');
+            req.flash('message', 'Invalid email or password');
             res.redirect('/');
             return;
         }

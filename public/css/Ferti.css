@@ -1,2 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+body{
+    background-image: url("/public/images/a474a437829f41bdd6a12ea6668a9aac-removebg-preview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.section1{
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px auto;
+}
+.fer h1{
+    color : #8a9a5b;
+    font-family: "Lora";
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.fer > p{
+    font-size: 24px;
+    margin-bottom: 17px;
+    line-height: 1.7;
+    font-weight: bold;
+    text-align: center;
+}
+.image img{
+    width: 350px;
+    height: 320px;
+    object-fit: contain;
+}

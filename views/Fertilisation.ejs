@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/Ferti.css">
+    <link rel="stylesheet" href="/public/css/Fertilisation.css">
 </head>
+
 <body>
-    <%- include('navbar'); -%>
-    <div class="section1">
-        <div class="fer">
-            <h1>Fertilisation</h1>
-            <p>La connaissance des caractéristiques du sol au moment de la programmation de la fertilisation est un atout qui permet d’assurer une fertilisation raisonnée, afin de : </p>
-            <ul>
-                <li>Satisfaire les besoins nutritifs de l'olivier;
-                </li>
-                <li>Minimiser l'impact sur l'environnement;
-                </li>
-                <li>Obtenir une meilleure production en termes de quantité mais également de qualité;
-                </li>
-                <li>Éviter les apports systématiques et excessifs de nutriments.
-                </li>
-            </ul>
-            <p class="pra">La pratique de la fertilisation de l’olivier se résume en 4 compartiments :</p>
+    <div>
+        <%- include('navbar'); -%>
+    </div>
+    <a href="/Home" class="back-to-home"><img src="../public/images/lo.png" alt="Logo"
+            style="width: 50px; height: 50px;"></a>
+
+
+    <div class="container" style="  margin-top: 100px;">
+        <div class="text">
+            <h2>Importance de la Fertilisation</h2>
+            <p>
+                La fertilisation des oliviers est cruciale pour leur croissance et leur production. Les nutriments
+                essentiels, tels que l'azote, le phosphore et le potassium, soutiennent le développement des feuilles,
+                des racines et des fruits, garantissant une meilleure qualité des olives. </p>
         </div>
+        <div class="divider"></div>
         <div class="image">
-            <img src="../public/images/fertilisation-sol.jpg" alt="">
+            <img src="../public/images/olive-tree-1474782_960_720.jpg" alt="Olivier" />
         </div>
     </div>
-    <div class="section2">
+
+    <div style="display: flex;">
+        <div class="container">
+            <div class="text">
+                <h2>Types de Fertilisants
+                </h2>
+                <p>
+                    On distingue deux types de fertilisants : organiques et minéraux. Les fertilisants organiques, comme
+                    le compost et le fumier, enrichissent le sol en matière organique, tandis que les minéraux offrent
+                    des nutriments ciblés pour des ajustements précis des besoins des oliviers. </p>
+            </div>
+            <div class="divider"></div>
+            <div class="image">
+                <img src="../public/images/fertilisation.jpg" alt="Olivier" />
+            </div>
+        </div>
+
+        <div class="container" style="margin-left: 30px;">
+            <img src="../public/images/Capture.PNG">
+        </div>
+    </div>
+    <div class="container">
         <div class="text">
-            <h2>
-                La fertilisation organique
-            </h2>
-            <p>
-                L'apport de la matière organique est une pratique courante qui vise l'amélioration ou le maintien des propriétés physiques et chimiques du sol. Parallèlement, l'effet fertilisant des composés organiques est à prendre en compte. Cependant, la libération des nutriments surtout l'azote minéral, est étroitement liée aux conditions climatiques et la nature de la matière organique utilisée, ce qui rend difficile l'optimisation de la gestion de la fertilisation.
-            </p>
-            <p>
-                Dans les conditions des oliveraies marocaines, on estime qu'il faut environ 30 tonnes/ha de fumier bien décomposé ou compost pour relever le taux de matière organique d'un sol de 1%. Un fumier de qualité peut apporter au sol jusqu'à 3 kg N/T, 3 kg P20s/T et 7 kg K20/T.
+            <h2>Méthodes d'Application</h2>
+            <p>Les méthodes d'application incluent l'épandage direct, l'incorporation dans le sol et l'application
+                foliaire. Les fertilisants organiques sont souvent épandus directement, tandis que les minéraux peuvent
+                être intégrés avant la plantation ou appliqués autour des arbres. L'application foliaire permet une
+                absorption rapide par les feuilles.<br>
             </p>
         </div>
-        <div class="img">
-            <img src="" alt="">
+        <div class="divider"></div>
+        <div class="image">
+            <img src="../public/images/quel-est-le-meilleur-engrais-pour-les-oliviers-mains-d-homme-pelouse-scaled.jpg" alt="Olivier" />
         </div>
     </div>
-    <div class="section3">
+
+    <div class="container">
         <div class="text">
-            <h2>
-                La fertilisation organique
-            </h2>
+            <h2>Timing et Ajustements</h2>
             <p>
-                L'apport de la matière organique est une pratique courante qui vise l'amélioration ou le maintien des propriétés physiques et chimiques du sol. Parallèlement, l'effet fertilisant des composés organiques est à prendre en compte. Cependant, la libération des nutriments surtout l'azote minéral, est étroitement liée aux conditions climatiques et la nature de la matière organique utilisée, ce qui rend difficile l'optimisation de la gestion de la fertilisation.
-            </p>
-            <p>
-                Dans les conditions des oliveraies marocaines, on estime qu'il faut environ 30 tonnes/ha de fumier bien décomposé ou compost pour relever le taux de matière organique d'un sol de 1%. Un fumier de qualité peut apporter au sol jusqu'à 3 kg N/T, 3 kg P20s/T et 7 kg K20/T.
-            </p>
+                Pour une fertilisation efficace, il est conseillé d'appliquer les fertilisants au début du printemps et
+                éventuellement en été. Une analyse régulière du sol permet d'ajuster les apports, évitant le surdosage
+                qui pourrait entraîner des problèmes de croissance et garantissant une fertilisation adaptée aux besoins
+                des oliviers. </p>
         </div>
-        <div class="img">
-            <img src="" alt="">
+        <div class="divider"></div>
+        <div class="image">
+            <img src="../public/images/olivier-espagne-rechauffement.avif" alt="Olivier" />
         </div>
     </div>
-    <div class="section4">
-        <div class="text">
-            <h2>
-                La fertilisation organique
-            </h2>
-            <p>
-                L'apport de la matière organique est une pratique courante qui vise l'amélioration ou le maintien des propriétés physiques et chimiques du sol. Parallèlement, l'effet fertilisant des composés organiques est à prendre en compte. Cependant, la libération des nutriments surtout l'azote minéral, est étroitement liée aux conditions climatiques et la nature de la matière organique utilisée, ce qui rend difficile l'optimisation de la gestion de la fertilisation.
-            </p>
-            <p>
-                Dans les conditions des oliveraies marocaines, on estime qu'il faut environ 30 tonnes/ha de fumier bien décomposé ou compost pour relever le taux de matière organique d'un sol de 1%. Un fumier de qualité peut apporter au sol jusqu'à 3 kg N/T, 3 kg P20s/T et 7 kg K20/T.
-            </p>
-        </div>
-        <div class="img">
-            <img src="" alt="">
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Zitoon. Tous droits réservés.</p>
+    </footer>
 </body>
+
 </html>
