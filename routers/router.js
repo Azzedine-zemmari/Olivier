@@ -10,9 +10,9 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 router.post("/file-upload", upload.single('file'), Event.InsertStade);
 //open page register
-router.get("/SignUp",(req,res)=>{
-    res.redirect("/public/register.html");
-});
+// router.get("/SignUp",(req,res)=>{
+//     res.redirect("/public/register.html");
+// });
 //open page login
 router.get("/",(req,res)=>{
     res.render("Authentification");
@@ -58,7 +58,7 @@ router.post("/login", (req, res) => {
         if (result[0].admin == 1) {
             res.redirect("/Dashboard");
         } else {
-            res.render("Fertilisation");//change to acceuill
+            res.redirect("/Home");
         }
     });
 });
@@ -81,7 +81,7 @@ router.get('/logout', (req, res) => {
         if (err) {
             return res.status(500).send('Error :(');
         }
-        res.redirect('/'); // Redirect to the login page or home page after logout
+        res.redirect('/'); // Redirect to the login page after logout
     });
 });
 
