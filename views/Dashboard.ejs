@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="/public//css/Dashboard.css">
+    <link rel="stylesheet" href="/public/css/Dashboard.css">
      
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -19,7 +19,7 @@
             <div class="logo-image">
                <img src="images/logo.png" alt="">
             </div>
-            <span class="logo_name">zitoon</span>
+            <span class="logo_name"><a href="/Home" style="color: black; text-decoration: none;">zitoon</a></span>
         </div>
         <div class="menu-items">
             <ul class="nav-links">
@@ -34,10 +34,7 @@
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="#">
-                    <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
-                </a></li>
+                <a  style="color: gray; text-decoration: none; margin-left: 20px; " href="/logout">logout</a>
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
@@ -53,9 +50,6 @@
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div>
-                <a href="/logout">logout</a>
-            </div>
             <!-- <div class="search-box">
                 <i class="uil uil-search"></i>
                 <input type="text" placeholder="Search here...">

@@ -21,7 +21,6 @@ app.use(session({
 // Set up flash messages
 app.use(flash());
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // Middleware to parse JSON and URL-encoded data

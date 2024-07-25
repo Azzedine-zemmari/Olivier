@@ -12,19 +12,20 @@
 </head>
 
 <body>
+    <%- include('navbar'); -%>
     <div id="title" class="center">
         <!-- <h1>2024</h1> -->
         <h2 style="color: rgb(151,158,134); font-size: 34px;">Cycle Annuel de Croissance et de Développement des olives</h2>
     </div>
 
     <div class="calendar-frame center">
-        <div class="day-frame placeholder"></div>
-        <div class="day-frame placeholder"></div>
+        <!-- <div class="day-frame placeholder"></div> -->
+        <!-- <div class="day-frame placeholder"></div> -->
         <% for(let i=0; i < data.length; i++) { %>
             <div class="day-frame center real" data-title="<%= data[i].title %>" data-time="<%= data[i].date %>"
                 data-description="<%= data[i].description %>" >
                 <img  src=<%=data[i].image %> />
-                <h2 class="day-number">
+                <h2 class="day-number"> 
                     <%= data[i].id %>
                 </h2>
                 <div class="day-label center">
